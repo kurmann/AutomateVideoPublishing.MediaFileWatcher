@@ -5,7 +5,7 @@ namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module;
 
 public static class ServiceCollection
 {
-    public static IServiceCollection AddModuleServices(this IServiceCollection services, ModuleSettings? moduleSettings)
+    public static IServiceCollection AddMediaFileWatcher(this IServiceCollection services, ModuleSettings? moduleSettings)
     {
         if (moduleSettings != null)
         {

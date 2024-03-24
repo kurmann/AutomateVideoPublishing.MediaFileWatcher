@@ -24,7 +24,7 @@ internal class Program
                 services.AddSingleton(moduleSettings);
                 services.Configure<ModuleSettings>(hostContext.Configuration);
 
-                services.AddModuleServices(moduleSettings);
+                services.AddMediaFileWatcher(moduleSettings);
 
                 services.AddLogging(builder =>
                 {
