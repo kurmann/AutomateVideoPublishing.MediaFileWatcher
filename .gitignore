@@ -8,7 +8,9 @@
 # Azure Functions localsettings file
 local.settings.json
 
-#!! ERROR: blazor is undefined. Use list command to see defined gitignore types !!#
+### GitHub Codespaces ###
+## Ignore mono directory
+.mono
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
