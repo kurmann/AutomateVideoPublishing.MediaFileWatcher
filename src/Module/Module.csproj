@@ -29,8 +29,6 @@
   <ItemGroup>
     <Content Include="src\**\*" Exclude="src\**\bin\**\*;src\**\obj\**\*" />
     
-    <Compile Remove="**\*" />
-    
     <!-- remove MacOS specific files -->
     <Content Remove="**\*.DS_Store" />
 
