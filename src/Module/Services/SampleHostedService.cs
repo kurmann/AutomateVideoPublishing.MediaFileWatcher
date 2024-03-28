@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module.Services;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
 
 public class SampleHostedService(ILogger<SampleHostedService> logger) : IHostedService, IDisposable
 {

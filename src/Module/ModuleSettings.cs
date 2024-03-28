@@ -1,4 +1,4 @@
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher;
 
 public class ModuleSettings
 {

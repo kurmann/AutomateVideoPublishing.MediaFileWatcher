@@ -1,6 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module.Commands;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Commands;
 
 public class SampleCommand(string? sampleParameter) : ICommand<SampleCommandResult>
 {
