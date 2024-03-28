@@ -8,6 +8,7 @@
     <RootNamespace>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</RootNamespace>
     <AssemblyName>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</AssemblyName>
     <IsPackable>false</IsPackable>
+    <UserSecretsId>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
