@@ -17,8 +17,7 @@
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
     <PackageVersion>0.2.0-alpha</PackageVersion>
     <PackageReleaseNotes>
-      Integration von Symbolen für die bessere Debugging-Unterstützung, sowie des Quellcodes für die bessere
-      Nachvollziehbarkeit.
+      Integration von Symbolen für die bessere Debugging-Unterstützung.
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -28,6 +27,10 @@
     <IncludeContentInPackage>true</IncludeContentInPackage>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+
+    <!-- Integration von Symbolen und Quelltext -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
   </PropertyGroup>
 

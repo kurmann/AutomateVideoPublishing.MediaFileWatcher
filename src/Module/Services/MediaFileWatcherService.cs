@@ -1,3 +1,6 @@
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
 namespace Kurmann.AutomateVideoPublishing.Module.Services;
 
 public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IEnumerable<string>? watchDirectories) : IHostedService, IDisposable
