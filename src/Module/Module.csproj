@@ -18,7 +18,7 @@
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
     <PackageVersion>0.3.0-alpha</PackageVersion>
     <PackageReleaseNotes>
-      
+      Rudimentäre Implementierung des MediaFileWatchherService. Meldet neu geschriebene Dateien in den angegebenen Verzeichnissen.
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -11,7 +11,7 @@ public static class ServiceCollection
         {
             services.AddSingleton(moduleSettings);
 
-            services.AddHostedService<SampleHostedService>();
+            services.AddHostedService<MediaFileWatcherService>();
         }
 
         return services;

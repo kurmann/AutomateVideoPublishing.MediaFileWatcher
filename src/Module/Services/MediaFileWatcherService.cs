@@ -1,12 +1,13 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
 
-public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IEnumerable<string>? watchDirectories) : IHostedService, IDisposable
+public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<List<string>> watchDirectories) : IHostedService, IDisposable
 {
     private readonly ILogger<MediaFileWatcherService> _logger = logger;
-    private readonly IEnumerable<string>? _watchDirectories = watchDirectories;
+    private readonly IEnumerable<string> _watchDirectories = watchDirectories.Value;
     private FileSystemWatcher? _fileSystemWatcher;
 
     public Task StartAsync(CancellationToken cancellationToken)
