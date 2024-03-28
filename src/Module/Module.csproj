@@ -15,9 +15,9 @@
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
-    <PackageVersion>0.2.1-alpha</PackageVersion>
+    <PackageVersion>0.3.0-alpha</PackageVersion>
     <PackageReleaseNotes>
-      Deterministic compilation and publishing
+      
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
