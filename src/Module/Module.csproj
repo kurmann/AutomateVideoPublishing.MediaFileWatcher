@@ -35,16 +35,11 @@
 
   </PropertyGroup>
 
-  <!-- spezifisch für NuGet-Packetierung -->
+  <!-- Spezifisch für NuGet-Packetierung -->
   <ItemGroup>
-
-    <!-- remove MacOS specific files -->
-    <Content Remove="**\*.DS_Store" />
-
     <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     <None Include="..\..\LICENSE" Pack="true" PackagePath="\"/>
     <None Include="..\..\PackageIcon.png" Pack="true" PackagePath="\"/>
-
   </ItemGroup>
 
   <ItemGroup>
