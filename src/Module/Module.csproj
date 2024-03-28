@@ -15,9 +15,10 @@
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
-    <PackageVersion>0.1.0-alpha</PackageVersion>
+    <PackageVersion>0.2.0-alpha</PackageVersion>
     <PackageReleaseNotes>
-      Erste Alpha-Version um das NuGet-Paket zu veröffentlichen.
+      Integration von Symbolen für die bessere Debugging-Unterstützung, sowie des Quellcodes für die bessere
+      Nachvollziehbarkeit.
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
