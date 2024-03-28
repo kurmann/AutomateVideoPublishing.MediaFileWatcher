@@ -10,7 +10,7 @@
     <PackageId>Kurmann.AutomateVideoPublishing.MediaFileWatcher</PackageId>
     <RepositoryUrl>https://github.com/kurmann/AutomateVideoPublishing.MediaFileWatcher</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>FileSystemWatcher; FileWatcher; AutomateVideoPublishing</PackageTags>
+    <PackageTags>FileSystemWatcher; FileWatcher</PackageTags>
     <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das AutomateVideoPublishing-Projekts.</Description>
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
