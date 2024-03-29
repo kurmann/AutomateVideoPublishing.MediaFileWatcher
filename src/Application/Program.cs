@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application;
 
@@ -14,22 +14,12 @@ internal class Program
         return Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                config.AddEnvironmentVariables(prefix: "AutomateVideoPublishing_");
+                config.AddEnvironmentVariables();
             })
             .ConfigureServices((hostContext, services) =>
             {
-                var moduleSettings = new ModuleSettings();
-                hostContext.Configuration.Bind(moduleSettings);
-                services.AddSingleton(moduleSettings);
-                services.Configure<ModuleSettings>(hostContext.Configuration);
-
-                services.AddMediaFileWatcher(moduleSettings);
-
-                services.AddLogging(builder =>
-                {
-                    builder.ClearProviders();
-                    builder.AddConsole();
-                });
+                services.Configure<ModuleSettings>(hostContext.Configuration.GetSection("ModuleSettings"));
+                services.AddHostedService<MediaFileWatcherService>();
             });
     }
 }
