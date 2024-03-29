@@ -14,6 +14,7 @@ internal class Program
         return Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
+                config.AddUserSecrets<Program>();
                 config.AddEnvironmentVariables();
             })
             .ConfigureServices((hostContext, services) =>

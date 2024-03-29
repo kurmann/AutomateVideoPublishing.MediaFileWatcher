@@ -4,10 +4,10 @@ using Microsoft.Extensions.Options;
 
 namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
 
-public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<List<string>> watchDirectories) : IHostedService, IDisposable
+public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<ModuleSettings> moduleSettings) : IHostedService, IDisposable
 {
     private readonly ILogger<MediaFileWatcherService> _logger = logger;
-    private readonly IEnumerable<string> _watchDirectories = watchDirectories.Value;
+    private readonly IEnumerable<string> _watchDirectories = moduleSettings?.Value.WatchDirectories ?? Enumerable.Empty<string>();
     private FileSystemWatcher? _fileSystemWatcher;
 
     public Task StartAsync(CancellationToken cancellationToken)
