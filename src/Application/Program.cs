@@ -1,4 +1,5 @@
 ﻿using Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -10,11 +11,23 @@ internal class Program
 
     public static IHostBuilder CreateHostBuilder(string[] args)
     {
-        return Host.CreateDefaultBuilder(args)
-            .ConfigureServices((hostContext, services) =>
+        var builder = Host.CreateDefaultBuilder(args);
+
+        // Füge die Benutzergeheimnisse hinzu wenn in Development Umgebung
+        if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == Environments.Development)
+        {
+            builder.ConfigureAppConfiguration((hostingContext, config) =>
             {
-                services.Configure<ModuleSettings>(hostContext.Configuration.GetSection("ModuleSettings"));
-                services.AddHostedService<MediaFileWatcherService>();
+                config.AddUserSecrets<Program>();
             });
+        }
+
+        builder.ConfigureServices((hostContext, services) =>
+        {
+            services.Configure<ModuleSettings>(hostContext.Configuration);
+            services.AddHostedService<MediaFileWatcherService>();
+        });
+
+        return builder;
     }
 }
