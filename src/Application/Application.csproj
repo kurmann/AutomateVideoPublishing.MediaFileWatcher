@@ -8,7 +8,7 @@
     <RootNamespace>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</RootNamespace>
     <AssemblyName>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</AssemblyName>
     <IsPackable>false</IsPackable>
-    <UserSecretsId>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application</UserSecretsId>
+    <UserSecretsId>c1443465-6765-4f53-9842-65c797943093</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
