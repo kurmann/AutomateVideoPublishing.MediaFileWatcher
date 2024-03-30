@@ -32,6 +32,7 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IO
             _fileSystemWatcher.Path = directory;
             _fileSystemWatcher.Created += OnCreated;
             _fileSystemWatcher.Renamed += OnRenamed;
+            _fileSystemWatcher.Deleted += OnDeleted;
             _fileSystemWatcher.EnableRaisingEvents = true;
         }
 
@@ -46,6 +47,11 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IO
     private void OnRenamed(object sender, RenamedEventArgs e)
     {
         _logger.LogInformation("File renamed: {file}", e.FullPath);
+    }
+
+    private void OnDeleted(object sender, FileSystemEventArgs e)
+    {
+        _logger.LogInformation("File deleted: {file}", e.FullPath);
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
