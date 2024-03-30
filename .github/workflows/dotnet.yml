@@ -25,10 +25,11 @@ jobs:
     # - name: Test
     #   run: dotnet test src/Tests/Tests.csproj --no-build --verbosity normal
 
-    # Builden und Packen des Moduls
     - name: Pack Module
-      run: dotnet pack src/Module/Module.csproj
+      run: dotnet pack src/Module/Module.csproj --output ./nupkgs
 
-    # Optional: Veröffentlichen des NuGet-Pakets
-    # - name: Push NuGet Package
-    #   run: dotnet nuget push src/Module/nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+    # Veröffentlichen der NuGet-Pakete
+    - name: Push NuGet and Symbol Packages
+      run: |
+        dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        dotnet nuget push ./nupkgs/*.snupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
