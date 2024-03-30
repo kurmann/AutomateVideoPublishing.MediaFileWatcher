@@ -1,18 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageType>Library</PackageType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module</RootNamespace>
-    <AssemblyName>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module</AssemblyName>
-    <PackageId>Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module</PackageId>
+
+    <RootNamespace>Kurmann.AutomateVideoPublishing.MediaFileWatcher</RootNamespace>
+    <AssemblyName>Kurmann.AutomateVideoPublishing.MediaFileWatcher</AssemblyName>
+    <PackageId>Kurmann.AutomateVideoPublishing.MediaFileWatcher</PackageId>
+    <PackageTags>FileSystemWatcher; FileWatcher; AutomateVideoPublishing</PackageTags>
+    <RepositoryUrl>https://github.com/kurmann/AutomateVideoPublishing.MediaFileWatcher</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das AutomateVideoPublishing-Projekts.</Description>
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
-    <PackageVersion>0.1.0-alpha</PackageVersion>
+    <PackageVersion>0.3.0-alpha</PackageVersion>
     <PackageReleaseNotes>
-
+      Rudimentäre Implementierung des MediaFileWatchherService. 
+      Meldet Dateiänderungen im überwachten Verzeichnis via Logging.
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,21 +27,21 @@
     <PackageIcon>PackageIcon.png</PackageIcon>
 
     <IncludeContentInPackage>true</IncludeContentInPackage>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+
+    <!-- Integration von Symbolen und Quelltext -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>true</Deterministic>
 
   </PropertyGroup>
 
-  <!-- spezifisch für NuGet-Packetierung -->
+  <!-- Spezifisch für NuGet-Packetierung -->
   <ItemGroup>
-    <Content Include="src\**\*" Exclude="src\**\bin\**\*;src\**\obj\**\*" />
-    
-    <!-- remove MacOS specific files -->
-    <Content Remove="**\*.DS_Store" />
-
-    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
-    <None Include="..\..\LICENSE" Pack="true" PackagePath="\"/>
-    <None Include="..\..\PackageIcon.png" Pack="true" PackagePath="\"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\..\PackageIcon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>

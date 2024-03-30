@@ -1,6 +1,6 @@
 using CSharpFunctionalExtensions;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module.Queries;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Queries;
 
 public class SampleQuery(string? sampleParameter) : IQueryService<SampleQueryResult>
 {

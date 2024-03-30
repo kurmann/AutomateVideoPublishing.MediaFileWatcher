@@ -1,12 +1,13 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
-namespace Kurmann.AutomateVideoPublishing.Module.Services;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
 
-public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IEnumerable<string>? watchDirectories) : IHostedService, IDisposable
+public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<ModuleSettings> moduleSettings) : IHostedService, IDisposable
 {
     private readonly ILogger<MediaFileWatcherService> _logger = logger;
-    private readonly IEnumerable<string>? _watchDirectories = watchDirectories;
+    private readonly IEnumerable<string> _watchDirectories = moduleSettings?.Value.WatchDirectories ?? Enumerable.Empty<string>();
     private FileSystemWatcher? _fileSystemWatcher;
 
     public Task StartAsync(CancellationToken cancellationToken)
@@ -31,6 +32,7 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IE
             _fileSystemWatcher.Path = directory;
             _fileSystemWatcher.Created += OnCreated;
             _fileSystemWatcher.Renamed += OnRenamed;
+            _fileSystemWatcher.Deleted += OnDeleted;
             _fileSystemWatcher.EnableRaisingEvents = true;
         }
 
@@ -45,6 +47,11 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IE
     private void OnRenamed(object sender, RenamedEventArgs e)
     {
         _logger.LogInformation("File renamed: {file}", e.FullPath);
+    }
+
+    private void OnDeleted(object sender, FileSystemEventArgs e)
+    {
+        _logger.LogInformation("File deleted: {file}", e.FullPath);
     }
 
     public Task StopAsync(CancellationToken cancellationToken)

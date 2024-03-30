@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module.Services;
+using Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Module;
+namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher;
 
 public static class ServiceCollection
 {
@@ -11,7 +11,7 @@ public static class ServiceCollection
         {
             services.AddSingleton(moduleSettings);
 
-            services.AddHostedService<SampleHostedService>();
+            services.AddHostedService<MediaFileWatcherService>();
         }
 
         return services;
