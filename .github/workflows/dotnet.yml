@@ -31,4 +31,4 @@ jobs:
 
     # Test Module project using the solution file, assuming tests are included in the solution
     - name: Test Module
-      run: dotnet test src/Tests/MediaFileWatcher.sln --no-build --verbosity normal
+      run: dotnet test src/Tests/Tests.csproj --no-build --verbosity normal
