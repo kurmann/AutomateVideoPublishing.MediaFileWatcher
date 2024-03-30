@@ -11,18 +11,24 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+        dotnet-version: '8.0.x'
+
+    # Restore dependencies for Module project
+    - name: Restore dependencies for Module
+      run: dotnet restore src/Module/Module.csproj
+
+    # Build Module project
+    - name: Build Module
+      run: dotnet build src/Module/Module.csproj --no-restore
+
+    # Test Module project using the solution file, assuming tests are included in the solution
+    - name: Test Module
+      run: dotnet test src/Tests/MediaFileWatcher.sln --no-build --verbosity normal
