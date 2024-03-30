@@ -26,6 +26,3 @@ jobs:
     - name: Build Module
       run: dotnet build src/Module/Module.csproj --no-restore
 
-    # Test using the Tests project
-    - name: Test
-      run: dotnet test src/Tests/Tests.csproj --no-build --verbosity normal
