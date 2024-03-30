@@ -1,4 +1,4 @@
-name: .NET
+name: .NET CI/CD
 
 on:
   push:
@@ -7,22 +7,30 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_and_pack:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
 
-    - name: Setup .NET
+    - name: Setup .NET Core
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-
-    # Restore dependencies for Module project
+        
     - name: Restore dependencies for Module
       run: dotnet restore src/Module/Module.csproj
 
-    # Build Module project
     - name: Build Module
       run: dotnet build src/Module/Module.csproj --no-restore
+    
+    # Optional: Ausführen der Tests
+    # - name: Test
+    #   run: dotnet test src/Tests/Tests.csproj --no-build --verbosity normal
 
+    - name: Pack Module
+      run: dotnet pack src/Module/Module.csproj --no-build --output nupkgs
+
+    # Optional: Veröffentlichen des NuGet-Pakets
+    # - name: Push NuGet Package
+    #   run: dotnet nuget push src/Module/nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
