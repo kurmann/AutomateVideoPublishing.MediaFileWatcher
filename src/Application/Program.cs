@@ -1,6 +1,4 @@
-﻿using Kurmann.Videoschnitt.MediaFileWatcher.Services;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 namespace Kurmann.Videoschnitt.MediaFileWatcher.Application;
@@ -11,23 +9,19 @@ internal class Program
 
     public static IHostBuilder CreateHostBuilder(string[] args)
     {
-        var builder = Host.CreateDefaultBuilder(args);
-
-        // Füge die Benutzergeheimnisse hinzu wenn in Development Umgebung
-        if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == Environments.Development)
-        {
-            builder.ConfigureAppConfiguration((hostingContext, config) =>
+        return Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                config.AddUserSecrets<Program>();
+                if (hostingContext.HostingEnvironment.IsDevelopment())
+                {
+                    // execute "dotnet user-secrets init" in the project folder to create the secrets.json file
+                    // add specific secrets with "dotnet user-secrets set "Kurmann:Videoschnitt:MikaModule:SampleSetting" "Secret Value""
+                    config.AddUserSecrets<Program>();
+                }
+            })
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddMediaFileWatcher(hostContext.Configuration);
             });
-        }
-
-        builder.ConfigureServices((hostContext, services) =>
-        {
-            services.Configure<ModuleSettings>(hostContext.Configuration);
-            services.AddHostedService<MediaFileWatcherService>();
-        });
-
-        return builder;
     }
 }

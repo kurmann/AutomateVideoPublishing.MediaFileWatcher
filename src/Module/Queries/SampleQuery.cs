@@ -8,8 +8,13 @@ public class SampleQuery(string? sampleParameter) : IQueryService<SampleQueryRes
 
     public Result<SampleQueryResult> Execute()
     {
-        return Result.Success(new SampleQueryResult(sampleParameter));
+        if (string.IsNullOrWhiteSpace(sampleParameter))
+            return Result.Failure<SampleQueryResult>("Sample parameter cannot be empty");
+
+        var sampleEntity = new SampleQueryResult(sampleParameter);
+
+        return Result.Success(sampleEntity);
     }
 }
 
-public record SampleQueryResult(string? SampleProperty);
+public record SampleQueryResult(string Result);

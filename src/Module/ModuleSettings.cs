@@ -2,5 +2,7 @@ namespace Kurmann.Videoschnitt.MediaFileWatcher;
 
 public class ModuleSettings
 {
-    public string[] WatchDirectories { get; set; } = [];
+    public const string SectionName = "Kurmann.Videoschnitt.MediaFileWatcher";
+
+    public string SampleSetting { get; set; } = "Sample Value";
 }
