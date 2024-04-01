@@ -2,12 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+    <PackageType>Dependency</PackageType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Kurmann.Videoschnitt.MediaFileWatcher.Application</RootNamespace>
+    <RootNamespace>Kurmann.Videoschnitt.MediaFileWatcher.Application.</RootNamespace>
     <AssemblyName>Kurmann.Videoschnitt.MediaFileWatcher.Application</AssemblyName>
     <IsPackable>false</IsPackable>
+    <Version>1.0.0</Version>
     <UserSecretsId>c1443465-6765-4f53-9842-65c797943093</UserSecretsId>
   </PropertyGroup>
 

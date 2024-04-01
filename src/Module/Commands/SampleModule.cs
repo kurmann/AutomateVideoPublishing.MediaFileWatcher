@@ -8,8 +8,13 @@ public class SampleCommand(string? sampleParameter) : ICommand<SampleCommandResu
 
     public Result<SampleCommandResult> Execute()
     {
-        return Result.Success(new SampleCommandResult(sampleParameter));
+        if (string.IsNullOrWhiteSpace(sampleParameter))
+            return Result.Failure<SampleCommandResult>("Sample parameter cannot be empty");
+    
+        var commandResult = new SampleCommandResult(sampleParameter);
+
+        return Result.Success(commandResult);
     }
 }
 
-public record SampleCommandResult(string? SampleProperty);
+public record SampleCommandResult(string Result);

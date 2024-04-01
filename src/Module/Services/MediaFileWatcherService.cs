@@ -4,20 +4,24 @@ using Microsoft.Extensions.Options;
 
 namespace Kurmann.Videoschnitt.MediaFileWatcher.Services;
 
-public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<ModuleSettings> moduleSettings) : IHostedService, IDisposable
+public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptionsSnapshot<ModuleSettings> options) : IHostedService, IDisposable
 {
     private readonly ILogger<MediaFileWatcherService> _logger = logger;
-    private readonly IEnumerable<string> _watchDirectories = moduleSettings?.Value.WatchDirectories ?? Enumerable.Empty<string>();
+    private readonly ModuleSettings _moduleSettings = options.Value;
     private FileSystemWatcher? _fileSystemWatcher;
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
+        var watchDirectories = _moduleSettings.WatchDirectories;
+
         // Logge Warnung, wenn keine Verzeichnisse zum Überwachen konfiguriert sind
-        if (_watchDirectories == null || !_watchDirectories.Any())
+        if (watchDirectories == null || watchDirectories.Length == 0)
         {
             _logger.LogWarning("No directories to watch are configured.");
             return Task.CompletedTask;
         }
+
+        _logger.LogInformation("Watching directories: {directories}", string.Join(", ", watchDirectories));
 
         _logger.LogInformation("Media File Watcher Service is starting.");
 
@@ -27,7 +31,7 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IO
             NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName,
         };
 
-        foreach (var directory in _watchDirectories)
+        foreach (var directory in watchDirectories)
         {
             _fileSystemWatcher.Path = directory;
             _fileSystemWatcher.Created += OnCreated;

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageType>Library</PackageType>
+
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,21 +9,36 @@
     <RootNamespace>Kurmann.Videoschnitt.MediaFileWatcher</RootNamespace>
     <AssemblyName>Kurmann.Videoschnitt.MediaFileWatcher</AssemblyName>
     <PackageId>Kurmann.Videoschnitt.MediaFileWatcher</PackageId>
+
+    <!-- Package-Tages zur Katalogisierung auf Nuget.org. Mehrere Tags mit Semikolen ";" trennen. -->
     <PackageTags>FileSystemWatcher; FileWatcher; Videoschnitt</PackageTags>
+
+    <!-- Die URL des GIT-Repositories -->
     <RepositoryUrl>https://github.com/kurmann/Videoschnitt.MediaFileWatcher</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+
+    <!-- Die Kurzbeschreibung des NuGet-Packets. Die längere Beschreibung wird als README.md eingebunden -->
     <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das Videoschnitt-Projekts.</Description>
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
-    <PackageVersion>0.4.1-alpha.1</PackageVersion>
-    <PackageReleaseNotes>Umbenennung des Hauptnamespaces von "AutomateVideoPublishing" zu "Videoschnitt". Bisheriges NuGet-Paket "Kurmann.AutomateVideoPublishing.MediaFileWatcher" wird nicht mehr unterstützt.
+    <PackageVersion>0.5.0-alpha</PackageVersion>
+
+    <!-- Die Release Notes gelten pro Version und sollten dementsprechend bei jeder neuen Version angepasst werden.  -->
+    <!-- Die Notes dürfen Umbrüche enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
+    <PackageReleaseNotes>Adaption des SCI Modul .NET Templates.
     </PackageReleaseNotes>
 
+    <!-- Die README.md-Datei, die im NuGet-Paket eingebettet wird. Entspricht gleichzeitig der GitHub Readme-Datei. -->
     <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- Die Lizenzdatei, die im NuGet-Paket eingebettet wird (befindet sich im Wurzelverzeichnis). -->
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <!-- Das Icon, das im NuGet-Paket eingebettet wird (befindet sich im Wurzelverzeichnis). -->
     <PackageIcon>PackageIcon.png</PackageIcon>
 
+    <!-- Assemblies und Symbol-Dateien werden im NuGet-Paket eingebettet. -->
     <IncludeContentInPackage>true</IncludeContentInPackage>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
@@ -34,8 +49,8 @@
     <Deterministic>true</Deterministic>
 
   </PropertyGroup>
-
-  <!-- Spezifisch für NuGet-Packetierung -->
+  
+    <!-- Spezifisch für NuGet-Packetierung -->
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
