@@ -19,6 +19,8 @@ public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IO
             return Task.CompletedTask;
         }
 
+        _logger.LogInformation("Watching directories: {directories}", string.Join(", ", _watchDirectories));
+
         _logger.LogInformation("Media File Watcher Service is starting.");
 
         _fileSystemWatcher = new FileSystemWatcher

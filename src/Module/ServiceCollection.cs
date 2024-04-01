@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
         services.Configure<ModuleSettings>(configuration.GetSection(ModuleSettings.SectionName));
         
         // Dienste hinzufügen
-        services.AddHostedService<SampleHostedService>();
+        services.AddHostedService<MediaFileWatcherService>();
         
         return services;
     }
