@@ -1,6 +1,6 @@
 using CSharpFunctionalExtensions;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Commands;
+namespace Kurmann.Videoschnitt.MediaFileWatcher.Commands;
 
 public interface ICommand<T>
 {

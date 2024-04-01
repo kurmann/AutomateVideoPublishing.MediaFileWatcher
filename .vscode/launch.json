@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/Application/bin/Debug/net8.0/Kurmann.AutomateVideoPublishing.MediaFileWatcher.Application.dll",
+            "program": "${workspaceFolder}/src/Application/bin/Debug/net8.0/Kurmann.Videoschnitt.MediaFileWatcher.Application.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

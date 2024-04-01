@@ -6,18 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <RootNamespace>Kurmann.AutomateVideoPublishing.MediaFileWatcher</RootNamespace>
-    <AssemblyName>Kurmann.AutomateVideoPublishing.MediaFileWatcher</AssemblyName>
-    <PackageId>Kurmann.AutomateVideoPublishing.MediaFileWatcher</PackageId>
-    <PackageTags>FileSystemWatcher; FileWatcher; AutomateVideoPublishing</PackageTags>
-    <RepositoryUrl>https://github.com/kurmann/AutomateVideoPublishing.MediaFileWatcher</RepositoryUrl>
+    <RootNamespace>Kurmann.Videoschnitt.MediaFileWatcher</RootNamespace>
+    <AssemblyName>Kurmann.Videoschnitt.MediaFileWatcher</AssemblyName>
+    <PackageId>Kurmann.Videoschnitt.MediaFileWatcher</PackageId>
+    <PackageTags>FileSystemWatcher; FileWatcher; Videoschnitt</PackageTags>
+    <RepositoryUrl>https://github.com/kurmann/Videoschnitt.MediaFileWatcher</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das AutomateVideoPublishing-Projekts.</Description>
+    <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das Videoschnitt-Projekts.</Description>
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
-    <PackageVersion>0.4.1-alpha</PackageVersion>
-    <PackageReleaseNotes>Versionserhöhung um zu Testen ob doppelter Push nicht mehr möglich ist.
+    <PackageVersion>0.4.1-alpha.1</PackageVersion>
+    <PackageReleaseNotes>Umbenennung des Hauptnamespaces von "AutomateVideoPublishing" zu "Videoschnitt". Bisheriges NuGet-Paket "Kurmann.AutomateVideoPublishing.MediaFileWatcher" wird nicht mehr unterstützt.
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
+using Kurmann.Videoschnitt.MediaFileWatcher.Services;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher;
+namespace Kurmann.Videoschnitt.MediaFileWatcher;
 
 public static class ServiceCollection
 {
