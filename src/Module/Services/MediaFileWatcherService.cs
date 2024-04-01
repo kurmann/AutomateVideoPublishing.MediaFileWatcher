@@ -2,7 +2,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Services;
+namespace Kurmann.Videoschnitt.MediaFileWatcher.Services;
 
 public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptions<ModuleSettings> moduleSettings) : IHostedService, IDisposable
 {

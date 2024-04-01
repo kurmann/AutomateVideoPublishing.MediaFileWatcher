@@ -1,6 +1,6 @@
 using CSharpFunctionalExtensions;
 
-namespace Kurmann.AutomateVideoPublishing.MediaFileWatcher.Queries;
+namespace Kurmann.Videoschnitt.MediaFileWatcher.Queries;
 
 public interface IQueryService<T>
 {
