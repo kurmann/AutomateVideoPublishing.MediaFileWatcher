@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using Kurmann.Videoschnitt.MediaFileWatcher.Services;
 using Microsoft.Extensions.Configuration;
+using Kurmann.Videoschnitt.MediaFileWatcher.Hosted;
 
 namespace Kurmann.Videoschnitt.MediaFileWatcher;
 
@@ -10,8 +10,8 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        // Bindet Root-Konfigurationswerte an ModuleSettings
-        services.Configure<ModuleSettings>(configuration.GetSection(ModuleSettings.SectionName));
+        // Bindet Root-Konfigurationswerte an ServicesSettings
+        services.Configure<ServicesSettings>(configuration.GetSection(ServicesSettings.SectionName));
         
         // Dienste hinzufügen
         services.AddHostedService<MediaFileWatcherService>();

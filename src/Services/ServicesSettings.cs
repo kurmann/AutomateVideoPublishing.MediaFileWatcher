@@ -1,6 +1,6 @@
 namespace Kurmann.Videoschnitt.MediaFileWatcher;
 
-public class ModuleSettings
+public class ServicesSettings
 {
     public const string SectionName = "Kurmann.Videoschnitt.MediaFileWatcher";
 
