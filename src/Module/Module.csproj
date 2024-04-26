@@ -13,10 +13,6 @@
     <!-- Package-Tages zur Katalogisierung auf Nuget.org. Mehrere Tags mit Semikolen ";" trennen. -->
     <PackageTags>Kurmann.Videoschnitt</PackageTags>
 
-    <!-- Die URL des GIT-Repositories -->
-    <RepositoryUrl>https://github.com/kurmann/Videoschnitt.MediaFileWatcher</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-
     <!-- Die Kurzbeschreibung des NuGet-Packets. Die längere Beschreibung wird als README.md eingebunden -->
     <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das Videoschnitt-Projekts.</Description>
 
