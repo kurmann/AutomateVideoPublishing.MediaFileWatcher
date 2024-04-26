@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_FILE: src/Module/Module.csproj
+      CSPROJ_FILE: src/Module/Module.csproj
       DOTNET_VERSION: '8.0.x'
 
     steps:
@@ -27,10 +27,10 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install dependencies
-        run: dotnet restore ${{ env.PROJECT_FILE }}
+        run: dotnet restore ${{ env.CSPROJ_FILE }}
 
       - name: Test
-        run: dotnet test ${{ env.PROJECT_FILE }}
+        run: dotnet test ${{ env.CSPROJ_FILE }}
 
   release_draft:
     runs-on: ubuntu-latest
