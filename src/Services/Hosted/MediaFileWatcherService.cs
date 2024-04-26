@@ -2,17 +2,17 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Kurmann.Videoschnitt.MediaFileWatcher.Services;
+namespace Kurmann.Videoschnitt.MediaFileWatcher.Hosted;
 
-public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptionsSnapshot<ModuleSettings> options) : IHostedService, IDisposable
+public class MediaFileWatcherService(ILogger<MediaFileWatcherService> logger, IOptionsSnapshot<ServicesSettings> options) : IHostedService, IDisposable
 {
     private readonly ILogger<MediaFileWatcherService> _logger = logger;
-    private readonly ModuleSettings _moduleSettings = options.Value;
+    private readonly ServicesSettings _servicesSettings = options.Value;
     private FileSystemWatcher? _fileSystemWatcher;
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        var watchDirectories = _moduleSettings.WatchDirectories;
+        var watchDirectories = _servicesSettings.WatchDirectories;
 
         // Logge Warnung, wenn keine Verzeichnisse zum Überwachen konfiguriert sind
         if (watchDirectories == null || watchDirectories.Length == 0)
