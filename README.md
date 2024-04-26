@@ -2,6 +2,12 @@
 
 Das Modul "Media File Watcher" ist eine Komponente der Automatisierungsplattform für private Videoproduktion, die darauf abzielt, die Effizienz und Organisation von Mediendateien zu verbessern, indem es Verzeichnisse überwacht und auf Änderungen reagiert.
 
+## Installation
+
+```
+dotnet add package Kurmann.Videoschnitt.MediaFileWatcher
+```
+
 ## Features
 
 - **Abstraktion des FileSystemWatcher**: Bietet eine saubere und einfache API, um Änderungen im Dateisystem zu beobachten.
@@ -19,5 +25,3 @@ In eine Host .NET-Anwendung
 ```csharp
 services.AddMediaFileWatcher(moduleSettings);
 ```
-
-Hinweis: Bereitstellung via NuGet-Package folgt.
