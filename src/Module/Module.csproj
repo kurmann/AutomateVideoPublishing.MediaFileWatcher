@@ -11,7 +11,7 @@
     <PackageId>Kurmann.Videoschnitt.MediaFileWatcher</PackageId>
 
     <!-- Package-Tages zur Katalogisierung auf Nuget.org. Mehrere Tags mit Semikolen ";" trennen. -->
-    <PackageTags>FileSystemWatcher; FileWatcher; Videoschnitt</PackageTags>
+    <PackageTags>Kurmann.Videoschnitt</PackageTags>
 
     <!-- Die URL des GIT-Repositories -->
     <RepositoryUrl>https://github.com/kurmann/Videoschnitt.MediaFileWatcher</RepositoryUrl>
