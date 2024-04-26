@@ -14,7 +14,7 @@
     <PackageTags>Kurmann.Videoschnitt</PackageTags>
 
     <!-- Die Kurzbeschreibung des NuGet-Packets. Die längere Beschreibung wird als README.md eingebunden -->
-    <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen für das Videoschnitt-Projekts.</Description>
+    <Description>Abstraktion des Systen.IO.FileSystemWatcher für die Überwachung von Dateiänderungen mit typisierten Dateiinfo über Medien.</Description>
 
     <!-- Die Version sollte mit jeder Veröffentlichung auf Nuget.org erhöht werden. Die Release Notes dürfen Umbrüche 
     enthalten, jedoch keine spezifischen Markdown-Formatierungen wie fett oder kursiv oder Überschriften -->
