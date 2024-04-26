@@ -23,5 +23,5 @@ dotnet add package Kurmann.Videoschnitt.MediaFileWatcher
 In eine Host .NET-Anwendung
 
 ```csharp
-services.AddMediaFileWatcher(moduleSettings);
+services.AddMediaFileWatcher(servicesSettings);
 ```
