@@ -1,5 +1,13 @@
 # Media File Watcher
 
+## Archivierung
+
+### Dieses Repository wurde in das Monorepo "kurmann/videoschnitt" migriert
+
+**Hinweis:** Dieses Repository wird nicht mehr aktiv weiterentwickelt und ist archiviert. Die Entwicklung wird nun im Monorepo [kurmann/videoschnitt](https://github.com/kurmann/videoschnitt) fortgeführt.
+
+---
+
 Das Modul "Media File Watcher" ist eine Komponente der Automatisierungsplattform für private Videoproduktion, die darauf abzielt, die Effizienz und Organisation von Mediendateien zu verbessern, indem es Verzeichnisse überwacht und auf Änderungen reagiert.
 
 ## Installation
